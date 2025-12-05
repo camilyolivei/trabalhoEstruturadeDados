@@ -119,3 +119,93 @@ public class Relatorios {
 
         return str.toString();
     }
+    public String fazerRelatoriosInvertidos(int QUANTIDADE_EXECUCAO) {
+        RelatorioVetor rv = new RelatorioVetor();
+        StringBuilder str = new StringBuilder();
+
+        long tempoInvertido = 0;
+
+        for (int i = 0; i < QUANTIDADE_EXECUCAO; i++) {
+            long ini = System.nanoTime();
+            rv.relatorioVetorInsercaoInvertido(100);
+
+            tempoInvertido += System.nanoTime() - ini;
+        }
+
+        tempoInvertido = tempoInvertido / QUANTIDADE_EXECUCAO;
+        str.append(
+            "\nTempo para inserção de 100 numeros invertidos em um vetor: " +
+                tempoInvertido +
+                "ns"
+        );
+
+        tempoInvertido = 0;
+
+        //MIL ELEMENTOS
+
+        for (int i = 0; i < QUANTIDADE_EXECUCAO; i++) {
+            long ini = System.nanoTime();
+            rv.relatorioVetorInsercaoInvertido(1000);
+
+            tempoInvertido += System.nanoTime() - ini;
+        }
+
+        tempoInvertido = tempoInvertido / QUANTIDADE_EXECUCAO;
+        str.append(
+            "\nTempo para inserção de 1000 numeros invertidos em um vetor: " +
+                tempoInvertido +
+                "ns"
+        );
+
+        tempoInvertido = 0;
+
+        //10 MIL ELEMENTOS
+
+        for (int i = 0; i < QUANTIDADE_EXECUCAO; i++) {
+            long ini = System.nanoTime();
+            rv.relatorioVetorInsercaoInvertido(10000);
+
+            tempoInvertido += System.nanoTime() - ini;
+        }
+
+        tempoInvertido = tempoInvertido / QUANTIDADE_EXECUCAO;
+        str.append(
+            "\nTempo para inserção de 10000 numeros invertidos em um vetor: " +
+                tempoInvertido +
+                "ns"
+        );
+
+        tempoInvertido = 0;
+
+        return str.toString();
+    }
+
+    public String fazerRelatoriosBuscas(int QUANTIDADE_EXECUCAO) {
+        RelatorioVetor rv = new RelatorioVetor();
+        StringBuilder str = new StringBuilder();
+
+        int[] tamanhos = {100, 1000, 10000};
+
+        for (int tamanho : tamanhos) {
+            int[] arrayTeste = rv.criarArrayOrdenado(tamanho);
+            long tempoBusca = 0;
+
+            // Buscar primeiro elemento
+            for (int i = 0; i < QUANTIDADE_EXECUCAO; i++) {
+                long ini = System.nanoTime();
+                rv.relatorioVetorBuscaPrimeiro(arrayTeste);
+                tempoBusca += System.nanoTime() - ini;
+            }
+            tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+            str.append("\nTempo para buscar primeiro elemento em vetor de " + tamanho + " elementos: " + tempoBusca + "ns");
+            tempoBusca = 0;
+
+            // Buscar último elemento
+            for (int i = 0; i < QUANTIDADE_EXECUCAO; i++) {
+                long ini = System.nanoTime();
+                rv.relatorioVetorBuscaUltimo(arrayTeste);
+                tempoBusca += System.nanoTime() - ini;
+            }
+            tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+            str.append("\nTempo para buscar ultimo elemento em vetor de " + tamanho + " elementos: " + tempoBusca + "ns");
+            tempoBusca = 0;
