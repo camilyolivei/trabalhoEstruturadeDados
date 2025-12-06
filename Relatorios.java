@@ -443,6 +443,7 @@ public class Relatorios {
       
         tempoOrdenacao += System.nanoTime() - ini;
       }
+
       tempoOrdenacao = tempoOrdenacao / quantidadeExecucao;
 
       str.append("Tempo para ordernar vetor de 100 elementos invertidos com Bubble Sort: " + tempoOrdenacao + "ns");
@@ -610,7 +611,8 @@ public class Relatorios {
     
       return str.toString();
     }
-    public String fazerRelatorioOrdenacaoMergeInvertido(int quantidadeExecucao){
+
+     public String fazerRelatorioOrdenacaoMergeInvertido(int quantidadeExecucao){
       RelatorioVetor rv = new RelatorioVetor();
       StringBuilder str = new StringBuilder();
 
@@ -845,7 +847,6 @@ public class Relatorios {
     }
     
     public String fazerRelatorioBuscaAVL(int quantidadeExecucao){
-      RelatorioAVL ravl = new RelatorioAVL();
       StringBuilder str = new StringBuilder();
 
       int[] tamanhos = {100, 1000, 10000};
@@ -1084,7 +1085,6 @@ public class Relatorios {
 
 
     public String fazerRelatorioBuscaArvoreB(int quantidadeExecucao){
-      RelatorioArvoreB rab = new RelatorioArvoreB();
       StringBuilder str = new StringBuilder();
 
       int[] tamanhos = {100, 1000, 10000};
@@ -1155,5 +1155,3 @@ public class Relatorios {
       return str.toString();
     }
 }
-
-
