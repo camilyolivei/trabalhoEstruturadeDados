@@ -443,3 +443,171 @@ public class Relatorios {
       
         tempoOrdenacao += System.nanoTime() - ini;
       }
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+
+      str.append("Tempo para ordernar vetor de 100 elementos invertidos com Bubble Sort: " + tempoOrdenacao + "ns");
+
+      tempoOrdenacao = 0;
+
+      // MIL ELEMENTOS
+    
+
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        int array2[] = rv.criarArrayInvertido(1000);
+        long ini = System.nanoTime();
+        rv.ordenarBubble(array2);
+      
+        tempoOrdenacao += System.nanoTime() - ini;
+      }
+
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo para ordernar vetor de 1000 elementos invertidos com Bubble Sort: " + tempoOrdenacao + "ns");
+
+     tempoOrdenacao = 0;
+
+      // 10 MIL ELEMENTOS
+      
+      
+      
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        int array3[] = rv.criarArrayInvertido(10000);
+        long ini = System.nanoTime();
+        rv.ordenarBubble(array3);
+      
+        tempoOrdenacao += System.nanoTime() - ini;
+      }
+      
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo para ordernar vetor de 10000 elementos invertidos com Bubble Sort: " + tempoOrdenacao + "ns");
+
+      tempoOrdenacao = 0;
+      
+      return str.toString();    
+  
+    }
+    
+    public String fazerRelatorioOrdenacaoMergeOrdenado(int QUANTIDADE_EXECUCAO){
+      RelatorioVetor rv = new RelatorioVetor();
+      StringBuilder str = new StringBuilder();
+
+
+      int arrayOriginal1[] = rv.criarArrayOrdenado(100);
+      int arrayOriginal2[] = rv.criarArrayOrdenado(1000);
+      int arrayOriginal3[] = rv.criarArrayOrdenado(10000);
+
+      long tempoOrdenacao = 0;
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        int array1[] = rv.copiarArray(arrayOriginal1);
+        long ini = System.nanoTime();
+        rv.ordenarMerge(array1,array1.length);
+
+        tempoOrdenacao += System.nanoTime() - ini;
+      }
+
+
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+      
+      str.append("Tempo para ordernar vetor com 100 elementos com merge sort: " + tempoOrdenacao + "ns");
+
+      tempoOrdenacao = 0;
+
+      //MIL ELEMENTOS
+   
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        int array2[] = rv.copiarArray(arrayOriginal2);
+        long ini = System.nanoTime();
+        rv.ordenarMerge(array2, array2.length);
+
+        tempoOrdenacao += System.nanoTime() - ini;
+      }
+
+
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+      
+      str.append("\nTempo para ordernar vetor com 1000 elementos com merge sort: " + tempoOrdenacao + "ns");
+
+      tempoOrdenacao = 0;
+
+      // 10 MIL ELEMENTOS
+      
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        int array3[] = rv.copiarArray(arrayOriginal3);
+        long ini = System.nanoTime();
+        rv.ordenarMerge(array3, array3.length);
+
+        tempoOrdenacao += System.nanoTime() - ini;
+      }
+
+      
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+      
+      str.append("\nTempo para ordernar vetor com 10000 elementos com merge sort: " + tempoOrdenacao + "ns");
+
+      tempoOrdenacao = 0;
+    
+      return str.toString();
+    }
+
+    public String fazerRelatorioOrdenacaoMergeAleatorio(int QUANTIDADE_EXECUCAO){
+      RelatorioVetor rv = new RelatorioVetor();
+      StringBuilder str = new StringBuilder();
+
+      long tempoOrdenacao = 0;
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        int array1[] = rv.criarArrayAleatorio(100);
+        long ini = System.nanoTime();
+        rv.ordenarMerge(array1,array1.length);
+
+        tempoOrdenacao += System.nanoTime() - ini;
+      }
+
+
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+      
+      str.append("Tempo para ordernar vetor com 100 elementos aleatorios com merge sort: " + tempoOrdenacao + "ns");
+
+      tempoOrdenacao = 0;
+
+      //MIL ELEMENTOS
+   
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        int array2[] = rv.criarArrayAleatorio(1000);
+        long ini = System.nanoTime();
+        rv.ordenarMerge(array2, array2.length);
+
+        tempoOrdenacao += System.nanoTime() - ini;
+      }
+
+
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+      
+      str.append("\nTempo para ordernar vetor com 1000 elementos aleatorios com merge sort: " + tempoOrdenacao + "ns");
+
+      tempoOrdenacao = 0;
+
+      // 10 MIL ELEMENTOS
+      
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        int array3[] = rv.criarArrayAleatorio(10000);
+        
+        long ini = System.nanoTime();
+        rv.ordenarMerge(array3, array3.length);
+
+        tempoOrdenacao += System.nanoTime() - ini;
+      }
+
+      
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+      
+      str.append("\nTempo para ordernar vetor com 10000 elementos aleatorios com merge sort: " + tempoOrdenacao + "ns");
+
+      tempoOrdenacao = 0;
+    
+      return str.toString();
+    }
+
