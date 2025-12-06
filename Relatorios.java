@@ -610,4 +610,550 @@ public class Relatorios {
     
       return str.toString();
     }
+    public String fazerRelatorioOrdenacaoMergeInvertido(int QUANTIDADE_EXECUCAO){
+      RelatorioVetor rv = new RelatorioVetor();
+      StringBuilder str = new StringBuilder();
+
+      long tempoOrdenacao = 0;
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        int array1[] = rv.criarArrayInvertido(100);
+        long ini = System.nanoTime();
+        rv.ordenarMerge(array1,array1.length);
+
+        tempoOrdenacao += System.nanoTime() - ini;
+      }
+
+
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+      
+      str.append("Tempo para ordernar vetor com 100 elementos invertidos com merge sort: " + tempoOrdenacao + "ns");
+
+      tempoOrdenacao = 0;
+
+      //MIL ELEMENTOS
+   
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        int array2[] = rv.criarArrayInvertido(1000);
+        long ini = System.nanoTime();
+        rv.ordenarMerge(array2, array2.length);
+
+        tempoOrdenacao += System.nanoTime() - ini;
+      }
+
+
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+      
+      str.append("\nTempo para ordernar vetor com 1000 elementos invertidos com merge sort: " + tempoOrdenacao + "ns");
+
+      tempoOrdenacao = 0;
+
+      // 10 MIL ELEMENTOS
+      
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        int array3[] = rv.criarArrayInvertido(10000);
+        
+        long ini = System.nanoTime();
+        rv.ordenarMerge(array3, array3.length);
+
+        tempoOrdenacao += System.nanoTime() - ini;
+      }
+
+      
+      tempoOrdenacao = tempoOrdenacao / QUANTIDADE_EXECUCAO;
+      
+      str.append("\nTempo para ordernar vetor com 10000 elementos invertidos com merge sort: " + tempoOrdenacao + "ns");
+
+      tempoOrdenacao = 0;
+    
+      return str.toString();
+    }
+    
+
+    public String fazerRelatorioInsercaoAVLOrdenado(int QUANTIDADE_EXECUCAO){
+      RelatorioAVL avl = new RelatorioAVL();
+      StringBuilder str = new StringBuilder();
+
+
+      long tempoInsercao = 0;
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        avl.relatorioInsercaoOrdenado(100);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 100 elementos para AVL: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+
+      //MIL elementos
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        avl.relatorioInsercaoOrdenado(1000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 1000 elementos para AVL: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+
+      //10 MIL ELEMENTOS
+
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        avl.relatorioInsercaoOrdenado(10000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 10000 elementos para AVL: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+
+      return str.toString();
+
+    }
+
+    public String fazerRelatorioInsercaoAVLAleatorio(int QUANTIDADE_EXECUCAO){
+      RelatorioAVL avl = new RelatorioAVL();
+      StringBuilder str = new StringBuilder();
+
+
+      long tempoInsercao = 0;
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        avl.relatorioInsercaoAleatorio(100);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("Tempo de inserção de 100 elementos aleatorios para AVL: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+
+      //MIL elementos
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        avl.relatorioInsercaoAleatorio(1000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 1000 elementos aleatorios para AVL: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+
+      //10 MIL ELEMENTOS
+
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        avl.relatorioInsercaoAleatorio(10000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 10000 elementos aleatorios para AVL: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+
+      return str.toString();
+
+    }
+
+    public String fazerRelatorioInsercaoAVLInvertido(int QUANTIDADE_EXECUCAO){
+      RelatorioAVL avl = new RelatorioAVL();
+      StringBuilder str = new StringBuilder();
+
+
+      long tempoInsercao = 0;
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        avl.relatorioInsercaoInvertido(100);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("Tempo de inserção de 100 elementos invertidos para AVL: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+
+      //MIL elementos
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        avl.relatorioInsercaoInvertido(1000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 1000 elementos invertidos para AVL: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+
+      //10 MIL ELEMENTOS
+
+
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        avl.relatorioInsercaoInvertido(10000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 10000 elementos invertidos para AVL: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+
+      return str.toString();
+
+    }
+    
+    public String fazerRelatorioBuscaAVL(int QUANTIDADE_EXECUCAO){
+      RelatorioAVL ravl = new RelatorioAVL();
+      StringBuilder str = new StringBuilder();
+
+      int[] tamanhos = {100, 1000, 10000};
+
+      for (int tamanho : tamanhos) {
+        AVL avl = new AVL();
+        
+        // Popular a árvore com elementos ordenados
+        for(int i = 0; i < tamanho; i++){
+          avl.adicionar(i);
+        }
+
+        long tempoBusca = 0;
+
+        // Buscar primeiro elemento
+        for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+          long ini = System.nanoTime();
+          avl.buscar(0);
+          tempoBusca += System.nanoTime() - ini;
+        }
+        tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+        str.append("\nTempo de busca em AVL pelo primeiro numero inserido (tamanho " + tamanho + "): " + tempoBusca + "ns");
+        tempoBusca = 0;
+
+        // Buscar último elemento
+        for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+          long ini = System.nanoTime();
+          avl.buscar(tamanho - 1);
+          tempoBusca += System.nanoTime() - ini;
+        }
+        tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+        str.append("\nTempo de busca em AVL pelo ultimo numero inserido (tamanho " + tamanho + "): " + tempoBusca + "ns");
+        tempoBusca = 0;
+
+        // Buscar elemento do meio
+        for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+          long ini = System.nanoTime();
+          avl.buscar(tamanho / 2);
+          tempoBusca += System.nanoTime() - ini;
+        }
+        tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+        str.append("\nTempo de busca em AVL pelo numero do meio inserido (tamanho " + tamanho + "): " + tempoBusca + "ns");
+        tempoBusca = 0;
+
+        // Buscar 3 elementos aleatórios que existem na árvore
+        for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+          long ini = System.nanoTime();
+          avl.buscar((int)(Math.random() * tamanho));
+          avl.buscar((int)(Math.random() * tamanho));
+          avl.buscar((int)(Math.random() * tamanho));
+          tempoBusca += System.nanoTime() - ini;
+        }
+        tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+        str.append("\nTempo de busca em AVL por 3 numero aleatorios inserido (tamanho " + tamanho + "): " + tempoBusca + "ns");
+        tempoBusca = 0;
+
+        // Buscar elemento inexistente
+        for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+          long ini = System.nanoTime();
+          avl.buscar(-1);
+          tempoBusca += System.nanoTime() - ini;
+        }
+        tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+        str.append("\nTempo de busca em AVL por um numero que não existe (tamanho " + tamanho + "): " + tempoBusca + "ns");
+        tempoBusca = 0;
+      }
+
+      return str.toString();
+
+    }
+
+    public String fazerRelatorioInsercaoArvoreB(int QUANTIDADE_EXECUCAO){
+      RelatorioArvoreB rab = new RelatorioArvoreB();
+      StringBuilder str = new StringBuilder();
+
+      long tempoInsercao = 0;
+     
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        rab.relatorioInsercaoOrdenado(100);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 100 elementos para Arvore Binaria: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+      
+      //MIL ELEMENTOS
+    
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        rab.relatorioInsercaoOrdenado(1000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 1000 elementos para Arvore Binaria: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+      
+      //10 MIL ELEMENTOS
+    
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        rab.relatorioInsercaoOrdenado(10000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 10000 elementos para Arvore Binaria: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+   
+      return str.toString();
+    }
+    
+  public String fazerRelatorioInsercaoArvoreBAleatorio(int QUANTIDADE_EXECUCAO){
+      RelatorioArvoreB rab = new RelatorioArvoreB();
+      StringBuilder str = new StringBuilder();
+
+      long tempoInsercao = 0;
+     
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        rab.relatorioInsercaoAleatorio(100);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("Tempo de inserção de 100 elementos aleatorios para Arvore Binaria: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+      
+      //MIL ELEMENTOS
+    
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        rab.relatorioInsercaoAleatorio(1000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 1000 elementos aleatorios para Arvore Binaria: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+      
+      //10 MIL ELEMENTOS
+    
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        rab.relatorioInsercaoAleatorio(10000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 10000 elementos aleatorios para Arvore Binaria: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+   
+      return str.toString();
+    }
+
+  public String fazerRelatorioInsercaoArvoreBInvertidos(int QUANTIDADE_EXECUCAO){
+      RelatorioArvoreB rab = new RelatorioArvoreB();
+      StringBuilder str = new StringBuilder();
+
+      long tempoInsercao = 0;
+     
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        rab.relatorioInsercaoInvertido(100);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("Tempo de inserção de 100 elementos invertidos para Arvore Binaria: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+      
+      //MIL ELEMENTOS
+    
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        rab.relatorioInsercaoInvertido(1000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 1000 elementos invertidos para Arvore Binaria: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+      
+      //10 MIL ELEMENTOS
+    
+      for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+        long ini = System.nanoTime();
+
+        rab.relatorioInsercaoInvertido(10000);
+
+        tempoInsercao += System.nanoTime() - ini;
+      }
+
+      tempoInsercao = tempoInsercao / QUANTIDADE_EXECUCAO;
+
+      str.append("\nTempo de inserção de 10000 elementos invertidos para Arvore Binaria: " + tempoInsercao + "ns");
+
+      tempoInsercao = 0;
+   
+      return str.toString();
+    }
+
+
+    public String fazerRelatorioBuscaArvoreB(int QUANTIDADE_EXECUCAO){
+      RelatorioArvoreB rab = new RelatorioArvoreB();
+      StringBuilder str = new StringBuilder();
+
+      int[] tamanhos = {100, 1000, 10000};
+
+      for (int tamanho : tamanhos) {
+        ArvoreB ab = new ArvoreB();
+        
+        // Popular a árvore com elementos ordenados
+        for(int i = 0; i < tamanho; i++){
+          ab.inserir(i);
+        }
+
+        long tempoBusca = 0;
+
+        // Buscar primeiro elemento
+        for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+          long ini = System.nanoTime();
+          ab.buscar(0);
+          tempoBusca += System.nanoTime() - ini;
+        }
+        tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+        str.append("\nTempo de busca em Arvore Binaria pelo primeiro numero inserido (tamanho " + tamanho + "): " + tempoBusca + "ns");
+        tempoBusca = 0;
+
+        // Buscar último elemento
+        for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+          long ini = System.nanoTime();
+          ab.buscar(tamanho - 1);
+          tempoBusca += System.nanoTime() - ini;
+        }
+        tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+        str.append("\nTempo de busca em Arvore Binaria pelo ultimo numero inserido (tamanho " + tamanho + "): " + tempoBusca + "ns");
+        tempoBusca = 0;
+
+        // Buscar elemento do meio
+        for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+          long ini = System.nanoTime();
+          ab.buscar(tamanho / 2);
+          tempoBusca += System.nanoTime() - ini;
+        }
+        tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+        str.append("\nTempo de busca em Arvore Binaria pelo numero do meio inserido (tamanho " + tamanho + "): " + tempoBusca + "ns");
+        tempoBusca = 0;
+
+        // Buscar 3 elementos aleatórios que existem na árvore
+        for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+          long ini = System.nanoTime();
+          ab.buscar((int)(Math.random() * tamanho));
+          ab.buscar((int)(Math.random() * tamanho));
+          ab.buscar((int)(Math.random() * tamanho));
+          tempoBusca += System.nanoTime() - ini;
+        }
+        tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+        str.append("\nTempo de busca em Arvore Binaria por 3 numero aleatorios inserido (tamanho " + tamanho + "): " + tempoBusca + "ns");
+        tempoBusca = 0;
+
+        // Buscar elemento inexistente
+        for(int i = 0; i < QUANTIDADE_EXECUCAO; i++){
+          long ini = System.nanoTime();
+          ab.buscar(-1);
+          tempoBusca += System.nanoTime() - ini;
+        }
+        tempoBusca = tempoBusca / QUANTIDADE_EXECUCAO;
+        str.append("\nTempo de busca em Arvore Binaria por um numero que não existe (tamanho " + tamanho + "): " + tempoBusca + "ns");
+        tempoBusca = 0;
+      }
+
+      return str.toString();
+    }
+}
+
 
