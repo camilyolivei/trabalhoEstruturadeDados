@@ -370,7 +370,7 @@ public class Relatorios {
       return str.toString();    
     }
 
-     public String fazerRelatorioOrdenacaoAleatorio(int quantidadeExecucao){
+    public String fazerRelatorioOrdenacaoAleatorio(int quantidadeExecucao){
       RelatorioVetor rv = new RelatorioVetor();
       StringBuilder str = new StringBuilder();
       
@@ -612,7 +612,7 @@ public class Relatorios {
       return str.toString();
     }
 
-     public String fazerRelatorioOrdenacaoMergeInvertido(int quantidadeExecucao){
+    public String fazerRelatorioOrdenacaoMergeInvertido(int quantidadeExecucao){
       RelatorioVetor rv = new RelatorioVetor();
       StringBuilder str = new StringBuilder();
 
@@ -973,7 +973,7 @@ public class Relatorios {
       return str.toString();
     }
     
-  public String fazerRelatorioInsercaoArvoreBAleatorio(int quantidadeExecucao){
+    public String fazerRelatorioInsercaoArvoreBAleatorio(int quantidadeExecucao){
       RelatorioArvoreB rab = new RelatorioArvoreB();
       StringBuilder str = new StringBuilder();
 
@@ -1028,7 +1028,7 @@ public class Relatorios {
       return str.toString();
     }
 
-  public String fazerRelatorioInsercaoArvoreBInvertidos(int quantidadeExecucao){
+    public String fazerRelatorioInsercaoArvoreBInvertidos(int quantidadeExecucao){
       RelatorioArvoreB rab = new RelatorioArvoreB();
       StringBuilder str = new StringBuilder();
 
@@ -1082,7 +1082,6 @@ public class Relatorios {
    
       return str.toString();
     }
-
 
     public String fazerRelatorioBuscaArvoreB(int quantidadeExecucao){
       StringBuilder str = new StringBuilder();
